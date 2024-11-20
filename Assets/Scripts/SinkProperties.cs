@@ -17,6 +17,8 @@ public class SinkProperties : MonoBehaviour
     private DialogueManager dialog;
     private Animator animator;
 
+    private float timeActive = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,19 @@ public class SinkProperties : MonoBehaviour
             }
         }
     }
+
+
+
+
+    private void restartAnimation()
+    {
+        if(isActive && timeActive > 5.0f)
+        {
+            isActive = false;
+            timeActive = 0f;
+        }
+    }
+
 
     private void OnMouseClick()
     {
